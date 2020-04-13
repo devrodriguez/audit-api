@@ -1,0 +1,12 @@
+[GIN-debug] GET    /api/signin               --> github.com/devrodriguez/audit-api/controllers.SignIn (3 handlers)
+[GIN-debug] GET    /api/auth/auditors        --> github.com/devrodriguez/audit-api/controllers.GetAuditor (4 handlers)
+[GIN-debug] POST   /api/auth/auditors        --> github.com/devrodriguez/audit-api/controllers.AddAuditor (4 handlers)
+[GIN-debug] PUT    /api/auth/auditors/:id    --> github.com/devrodriguez/audit-api/controllers.UpdateAuditor (4 handlers)
+[GIN-debug] DELETE /api/auth/auditors        --> github.com/devrodriguez/audit-api/controllers.DeleteAuditor (4 handlers)
+[GIN-debug] GET    /api/auth/enterprises     --> github.com/devrodriguez/audit-api/controllers.GetEnterprises (4 handlers)
+[GIN-debug] POST   /api/auth/enterprises     --> github.com/devrodriguez/audit-api/controllers.AddEnterprise (4 handlers)
+[GIN-debug] PUT    /api/auth/enterprises/:id --> github.com/devrodriguez/audit-api/controllers.UpdateEnterprise (4 handlers)
+[GIN-debug] GET    /api/auth/audits          --> github.com/devrodriguez/audit-api/controllers.GetAudit (4 handlers)
+[GIN-debug] POST   /api/auth/audits          --> github.com/devrodriguez/audit-api/controllers.CreateAudit (4 handlers)
+[GIN-debug] Listening and serving HTTP on :3001
+::1 - [Mon, 13 Apr 2020 16:45:42 -05] "GET /api/auth/audits HTTP/1.1 200 224.9927ms "PostmanRuntime/7.24.1" "

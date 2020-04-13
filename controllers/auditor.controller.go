@@ -66,19 +66,18 @@ func AddAuditor(gCtx *gin.Context) {
 	}
 
 	auditorRef := mgClient.Database("audit").Collection("auditors")
-
 	insertRes, err := auditorRef.InsertOne(context.TODO(), auditor)
 
 	if err != nil {
 		response.Error = err.Error()
-		response.Message = "Error reading data"
+		response.Message = "Error setting data"
 		gCtx.JSON(http.StatusInternalServerError, response)
 		return
 	}
 
 	// Build response
 	response.Message = "Document created"
-	response.Data = gin.H{"docId": insertRes.InsertedID}
+	response.Data = gin.H{"docID": insertRes.InsertedID}
 	gCtx.JSON(http.StatusOK, response)
 }
 

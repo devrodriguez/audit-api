@@ -1,8 +1,11 @@
 package models
 
+import "go.mongodb.org/mongo-driver/bson/primitive"
+
 type Auditor struct {
-	Name string `json:"name"`
-	Age  int    `json:"age"`
+	ID   primitive.ObjectID `bson:"_id" json:"id,omitempty"`
+	Name string             `bson:"name" json:"name"`
+	Age  int                `bson:"age,omitempty" json:"age,omitempty"`
 }
 
 func (a Auditor) GetHandshake() string {

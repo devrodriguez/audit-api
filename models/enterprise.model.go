@@ -1,9 +1,12 @@
 package models
 
+import "go.mongodb.org/mongo-driver/bson/primitive"
+
 type Enterprise struct {
-	Name     string `bson:"name"`
-	Address  string `bson:"address"`
-	Nit      string `bson:"nit"`
-	Business string `bson:"business"`
-	Status   bool   `bson:"status"`
+	ID       primitive.ObjectID `bson:"_id,omitempty" json:"id,omitempty"`
+	Name     string             `bson:"name" json:"name"`
+	Address  string             `bson:"address" json:"address,omitempty"`
+	Nit      string             `bson:"nit" json:"nit,omitempty"`
+	Business string             `bson:"business" json:"business,omitempty"`
+	Status   bool               `bson:"status" json:"status,omitempty"`
 }
