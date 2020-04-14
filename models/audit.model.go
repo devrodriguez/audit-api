@@ -11,4 +11,5 @@ type Audit struct {
 	Findings   []Finding          `bson:"findings" json:"findings"`
 	StartDate  string             `bson:"startDate" json:"startDate"`
 	EndDate    string             `bson:"endDate" json:"endDate"`
+	Done       bool               `bson:"done" json:"done"`
 }

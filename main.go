@@ -61,6 +61,8 @@ func main() {
 		// Audit routes
 		secRoutes.GET("/audits", controllers.GetAudit)
 		secRoutes.POST("/audits", controllers.CreateAudit)
+		secRoutes.PUT("/audits/:id/goal", controllers.AddGoal)
+		secRoutes.DELETE("/audits/:auditId/goal/:goalId", controllers.RemoveGoal)
 	}
 
 	if port == "" {

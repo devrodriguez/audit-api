@@ -9,6 +9,7 @@ import (
 	"github.com/devrodriguez/audit-api/models"
 	"github.com/gin-gonic/gin"
 	"go.mongodb.org/mongo-driver/bson"
+	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
@@ -80,4 +81,72 @@ func CreateAudit(gCtx *gin.Context) {
 	response.Data = gin.H{"docID": insertRes.InsertedID}
 
 	gCtx.JSON(http.StatusOK, response)
+}
+
+func AddGoal(gCtx *gin.Context) {
+	var response models.Response
+	var goal models.Goal
+
+	mgClient := db.GetClient()
+
+	// Bind data request
+	if err := gCtx.BindJSON(&goal); err != nil {
+		response.Message = "Error binding data"
+		response.Error = err.Error()
+		gCtx.JSON(http.StatusInternalServerError, response)
+		return
+	}
+
+	goal.ID = primitive.NewObjectID()
+
+	// Get request data
+	id := gCtx.Param("id")
+	docId, _ := primitive.ObjectIDFromHex(id)
+	filter := bson.M{"_id": docId, "done": false}
+	change := bson.M{"$push": bson.M{"goals": goal}}
+
+	auditRef := mgClient.Database("audit").Collection("audits")
+	resUpdate, err := auditRef.UpdateOne(context.TODO(), filter, change)
+
+	if err != nil {
+		response.Message = "Error updating data"
+		response.Error = err.Error()
+		gCtx.JSON(http.StatusInternalServerError, response)
+		return
+	}
+
+	response.Message = "Data updated"
+	response.Data = gin.H{"updated": resUpdate.ModifiedCount, "finded": resUpdate.MatchedCount}
+
+	gCtx.JSON(http.StatusOK, response)
+}
+
+func RemoveGoal(gCtx *gin.Context) {
+	var response models.Response
+
+	mgClient := db.GetClient()
+
+	// Get url parameters
+	auditId := gCtx.Param("auditId")
+	goalId := gCtx.Param("goalId")
+	auditDocId, _ := primitive.ObjectIDFromHex(auditId)
+	goalDocId, _ := primitive.ObjectIDFromHex(goalId)
+	filter := bson.M{"_id": auditDocId, "done": false}
+	change := bson.M{"$pull": bson.M{"goals": bson.M{"_id": goalDocId}}}
+
+	auditRef := mgClient.Database("audit").Collection("audits")
+	resUpdate, err := auditRef.UpdateOne(context.TODO(), filter, change)
+
+	if err != nil {
+		response.Message = "Error updating data"
+		response.Error = err.Error()
+		gCtx.JSON(http.StatusInternalServerError, response)
+		return
+	}
+
+	response.Message = "Data updated"
+	response.Data = gin.H{"updated": resUpdate.ModifiedCount, "finded": resUpdate.MatchedCount}
+
+	gCtx.JSON(http.StatusOK, response)
+
 }
