@@ -1,24 +1,15 @@
-[GIN-debug] GET    /api/signin               --> github.com/devrodriguez/audit-api/controllers.SignIn (3 handlers)
-[GIN-debug] GET    /api/auth/auditors        --> github.com/devrodriguez/audit-api/controllers.GetAuditor (4 handlers)
-[GIN-debug] POST   /api/auth/auditors        --> github.com/devrodriguez/audit-api/controllers.AddAuditor (4 handlers)
-[GIN-debug] PUT    /api/auth/auditors/:id    --> github.com/devrodriguez/audit-api/controllers.UpdateAuditor (4 handlers)
-[GIN-debug] DELETE /api/auth/auditors        --> github.com/devrodriguez/audit-api/controllers.DeleteAuditor (4 handlers)
-[GIN-debug] GET    /api/auth/enterprises     --> github.com/devrodriguez/audit-api/controllers.GetEnterprises (4 handlers)
-[GIN-debug] POST   /api/auth/enterprises     --> github.com/devrodriguez/audit-api/controllers.AddEnterprise (4 handlers)
-[GIN-debug] PUT    /api/auth/enterprises/:id --> github.com/devrodriguez/audit-api/controllers.UpdateEnterprise (4 handlers)
-[GIN-debug] GET    /api/auth/audits          --> github.com/devrodriguez/audit-api/controllers.GetAudit (4 handlers)
-[GIN-debug] POST   /api/auth/audits          --> github.com/devrodriguez/audit-api/controllers.CreateAudit (4 handlers)
-[GIN-debug] PUT    /api/auth/audits/:id/goal --> github.com/devrodriguez/audit-api/controllers.AddGoal (4 handlers)
-[GIN-debug] DELETE /api/auth/audits/:auditId/goal/:goalId --> github.com/devrodriguez/audit-api/controllers.RemoveGoal (4 handlers)
+[GIN-debug] GET    /api/signin               --> github.com/devrodriguez/audit-api/controllers.SignIn (4 handlers)
+[GIN-debug] GET    /api/auth/auditors        --> github.com/devrodriguez/audit-api/controllers.GetAuditor (5 handlers)
+[GIN-debug] POST   /api/auth/auditors        --> github.com/devrodriguez/audit-api/controllers.AddAuditor (5 handlers)
+[GIN-debug] PUT    /api/auth/auditors/:id    --> github.com/devrodriguez/audit-api/controllers.UpdateAuditor (5 handlers)
+[GIN-debug] DELETE /api/auth/auditors        --> github.com/devrodriguez/audit-api/controllers.DeleteAuditor (5 handlers)
+[GIN-debug] GET    /api/auth/enterprises     --> github.com/devrodriguez/audit-api/controllers.GetEnterprises (5 handlers)
+[GIN-debug] POST   /api/auth/enterprises     --> github.com/devrodriguez/audit-api/controllers.AddEnterprise (5 handlers)
+[GIN-debug] PUT    /api/auth/enterprises/:id --> github.com/devrodriguez/audit-api/controllers.UpdateEnterprise (5 handlers)
+[GIN-debug] GET    /api/auth/audits          --> github.com/devrodriguez/audit-api/controllers.GetAudit (5 handlers)
+[GIN-debug] POST   /api/auth/audits          --> github.com/devrodriguez/audit-api/controllers.CreateAudit (5 handlers)
+[GIN-debug] PUT    /api/auth/audits/:id/goal --> github.com/devrodriguez/audit-api/controllers.AddGoal (5 handlers)
+[GIN-debug] DELETE /api/auth/audits/:auditId/goal/:goalId --> github.com/devrodriguez/audit-api/controllers.RemoveGoal (5 handlers)
 [GIN-debug] Listening and serving HTTP on :3001
-::1 - [Tue, 14 Apr 2020 15:59:21 -05] "PUT /api/auth/audits/5e94dcda2f9d578344c38c81/goal HTTP/1.1 200 184.4446ms "PostmanRuntime/7.24.1" "
-::1 - [Tue, 14 Apr 2020 15:59:34 -05] "GET /api/auth/audits HTTP/1.1 200 96.0673ms "PostmanRuntime/7.24.1" "
-::1 - [Tue, 14 Apr 2020 15:59:48 -05] "DELETE /api/auth/audits/5e94dcda2f9d578344c38c81/goal/5e9621ddaba5ce74dcef72ff HTTP/1.1 200 399.4877ms "PostmanRuntime/7.24.1" "
-::1 - [Tue, 14 Apr 2020 16:01:01 -05] "GET /api/auth/audits HTTP/1.1 401 0s "PostmanRuntime/7.24.1" "
-::1 - [Tue, 14 Apr 2020 16:01:05 -05] "GET /api/signin HTTP/1.1 200 6.9997ms "PostmanRuntime/7.24.1" "
-::1 - [Tue, 14 Apr 2020 16:01:20 -05] "GET /api/auth/audits HTTP/1.1 200 92.1209ms "PostmanRuntime/7.24.1" "
-::1 - [Tue, 14 Apr 2020 16:01:42 -05] "PUT /api/auth/audits/5e94dcda2f9d578344c38c81/goal HTTP/1.1 401 996.8µs "PostmanRuntime/7.24.1" "
-::1 - [Tue, 14 Apr 2020 16:01:57 -05] "PUT /api/auth/audits/5e94dcda2f9d578344c38c81/goal HTTP/1.1 200 93.8031ms "PostmanRuntime/7.24.1" "
-::1 - [Tue, 14 Apr 2020 16:02:08 -05] "DELETE /api/auth/audits/5e94dcda2f9d578344c38c81/goal/5e9621ddaba5ce74dcef72ff HTTP/1.1 401 995.3µs "PostmanRuntime/7.24.1" "
-::1 - [Tue, 14 Apr 2020 16:02:13 -05] "DELETE /api/auth/audits/5e94dcda2f9d578344c38c81/goal/5e9621ddaba5ce74dcef72ff HTTP/1.1 200 100.7963ms "PostmanRuntime/7.24.1" "
-::1 - [Tue, 14 Apr 2020 16:05:16 -05] "GET /api/auth/enterprises HTTP/1.1 200 103.0018ms "PostmanRuntime/7.24.1" "
+::1 - [Fri, 24 Apr 2020 11:58:58 -05] "GET /signin HTTP/1.1 404 0s "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36" "
+::1 - [Fri, 24 Apr 2020 11:58:58 -05] "GET /favicon.ico HTTP/1.1 404 0s "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36" "

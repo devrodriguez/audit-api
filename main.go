@@ -29,7 +29,7 @@ func main() {
 	setupLogOutput()
 
 	// Middlewares
-	server.Use(gin.Recovery(), middlewares.Logger())
+	server.Use(gin.Recovery(), middlewares.Logger(), middlewares.CORSAllowed())
 
 	// Db connection
 	connErr := db.Connect()
