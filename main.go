@@ -1,12 +1,13 @@
 package main
 
 import (
+	"fmt"
+	"github.com/devrodriguez/audit-api/db"
 	"io"
 	"log"
 	"os"
 
 	"github.com/devrodriguez/audit-api/controllers"
-	"github.com/devrodriguez/audit-api/db"
 	"github.com/devrodriguez/audit-api/middlewares"
 	"github.com/gin-gonic/gin"
 )
@@ -37,6 +38,8 @@ func main() {
 		log.Fatal(connErr)
 		return
 	}
+
+	fmt.Printf("[port:%s]", port)
 
 	// Routes
 	pubRoutes := server.Group("/api")

@@ -68,7 +68,7 @@ func CreateAudit(gCtx *gin.Context) {
 	}
 
 	auditRef := mgClient.Database("audit").Collection("audits")
-	insertRes, err := auditRef.InsertOne(context.TODO(), audit)
+	insertRes, err := auditRef.InsertOne(gCtx, audit)
 
 	if err != nil {
 		response.Error = err.Error()
